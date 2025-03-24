@@ -1,0 +1,132 @@
+/* 
+   style.css
+   Tema 'BMW' yang elegan & modern
+   Nuansa gelap dengan aksen biru, efek metallic minimalis
+*/
+
+/* Palet Warna & Variabel */
+:root {
+  --bg-gradient-start: #141414; /* Warna gelap awal */
+  --bg-gradient-end:   #1f1f1f; /* Warna gelap akhir */
+  --text-color:        #f5f5f5; /* Warna teks utama */
+  --accent-blue:       #0056b3; /* Aksen biru ala BMW */
+  --box-gradient-start:#1a1a1a; /* Warna box awal */
+  --box-gradient-end:  #242424; /* Warna box akhir */
+  --border-color:      #333;
+  --shadow-color:      rgba(0, 0, 0, 0.3);
+}
+
+/* Latar Belakang & Teks Umum */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Kotak Wrapper (Box) */
+.box {
+  background: linear-gradient(120deg, var(--box-gradient-start), var(--box-gradient-end));
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  /* Bayangan metallic lembut */
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+/* Judul (Title) */
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+/* Form & Inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.65rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: #2a2a2a;  /* Warna lebih gelap */
+  color: var(--text-color);
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+/* Tombol Utama (Primary) */
+.btn-primary {
+  background: var(--accent-blue);
+  color: #fff;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: #004a9a; /* Biru sedikit lebih gelap */
+  transform: scale(1.03);
+}
+
+/* Tombol Sekunder */
+.btn-secondary {
+  background: #444;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #666;
+  transform: scale(1.03);
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  background: #2c2c2c; /* Header tabel lebih gelap */
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+table tr:nth-child(even) td {
+  background: #1e1e1e; /* Baris genap sedikit lebih terang */
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Kelontong Gen Z</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-300 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">🛍️ Toko Kelontong Fathan</h1>
+    <button id="toggleMode" class="bg-gray-200 dark:bg-gray-600 px-4 py-2 rounded-lg">
+      🌙 Mode Malam
+    </button>
+  </nav>
+
+  <div class="container mx-auto p-5">
+
+    <!-- (1) Tambah Produk -->
+    <section class="box">
+      <h2 class="title">Tambah Produk</h2>
+      <form id="form_produk" class="flex flex-col gap-3">
+        <input type="text" id="nama_produk" placeholder="Nama Produk" required class="input"/>
+        <input type="number" id="harga" placeholder="Harga" required class="input"/>
+        <input type="number" id="stok" placeholder="Stok" required class="input"/>
+        <button type="submit" class="btn-primary">Simpan</button>
+      </form>
+    </section>
+
+    <!-- (2) Tambah Pelanggan -->
+    <section class="box">
+      <h2 class="title">Tambah Pelanggan</h2>
+      <form id="form_pelanggan" class="flex flex-col gap-3">
+        <input type="text" id="nama_pelanggan" placeholder="Nama Pelanggan" required class="input"/>
+        <input type="text" id="alamat" placeholder="Alamat" required class="input"/>
+        <input type="text" id="telepon" placeholder="Telepon" required class="input"/>
+        <button type="submit" class="btn-primary">Simpan</button>
+      </form>
+    </section>
+
+    <!-- (3) Tambah Transaksi -->
+    <section class="box">
+      <h2 class="title">Tambah Transaksi</h2>
+      <form id="form_transaksi" class="flex flex-col gap-3">
+        <input type="text" id="transaksi_pelanggan" placeholder="Nama Pelanggan" required class="input"/>
+        <input type="text" id="transaksi_produk" placeholder="Nama Produk" required class="input"/>
+        <input type="number" id="jumlah" placeholder="Jumlah" required class="input"/>
+        <button type="submit" class="btn-primary">Simpan</button>
+      </form>
+    </section>
+
+    <!-- (4) Laporan Stok Barang -->
+    <section class="box">
+      <h2 class="title">Laporan Stok Barang</h2>
+      <table id="tabel_produk" class="table-auto w-full"></table>
+    </section>
+
+    <!-- (5) Laporan Data Pelanggan -->
+    <section class="box">
+      <h2 class="title">Laporan Data Pelanggan</h2>
+      <table id="tabel_pelanggan" class="table-auto w-full"></table>
+    </section>
+
+    <!-- (6) Cari Produk -->
+    <section class="box">
+      <h2 class="title">Cari Produk</h2>
+      <div class="flex gap-3 items-center justify-center">
+        <input type="text" id="cari_produk" placeholder="Masukkan nama produk" class="input w-1/2"/>
+        <button onclick="cariProduk()" class="btn-primary">Cari</button>
+      </div>
+      <p id="hasil_cari" class="mt-2 text-sm text-green-500 font-semibold"></p>
+    </section>
+
+    <!-- (7) Laporan Faktur Jual -->
+    <section class="box">
+      <h2 class="title">Laporan Faktur Jual</h2>
+      <table id="tabel_faktur" class="table-auto w-full"></table>
+      <button onclick="cetakStruk()" class="btn-secondary mt-3">Cetak Struk</button>
+    </section>
+
+    <!-- (8) Rekap Penjualan Per Hari -->
+    <section class="box">
+      <h2 class="title">Rekapitulasi Penjualan Per Hari</h2>
+      <table id="rekap_harian" class="table-auto w-full"></table>
+    </section>
+
+    <!-- (9) Rekap Penjualan Per Bulan -->
+    <section class="box">
+      <h2 class="title">Rekapitulasi Penjualan Per Bulan</h2>
+      <table id="rekap_bulanan" class="table-auto w-full"></table>
+    </section>
+
+    <!-- (10) Rekap Penjualan Per Tahun -->
+    <section class="box">
+      <h2 class="title">Rekapitulasi Penjualan Per Tahun</h2>
+      <table id="rekap_tahunan" class="table-auto w-full"></table>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
